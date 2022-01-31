@@ -20,7 +20,7 @@ jobs:
     - name: Instalação de dependencias (bibliotecas)
       run: |
         python -m pip install --upgrade pip
-        pip install codecov pipenv
+        pip install codecov pipenv flake8
         pipenv sync -d
     - name: Lint com flake8
       run: |
