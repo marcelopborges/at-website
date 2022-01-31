@@ -30,7 +30,7 @@ jobs:
           cp contrib/env-sample .env
       - name: Instalando dependências
         run: |
-          pip install pipenv
+          pip install pipenv codecov
           pipenv sync --dev
       - name: Rodar flake8
         run: |
