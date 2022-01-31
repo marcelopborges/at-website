@@ -39,8 +39,6 @@ jobs:
         run: |
           pipenv run pytest --cov=atWebsite
       - name: Relatório Coverage
-        with:
-          token: ${{secrets.CODECOV_TOKEN}}
         run: |
           pipenv run codecov
           
