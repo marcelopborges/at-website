@@ -38,7 +38,9 @@ jobs:
       - name: Rodar Pytest
         run: |
           pipenv run pytest --cov=atWebsite
-      - name: Relatório Coverage
+      - name: Relatório
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
         run: |
           pipenv run codecov
           
