@@ -4,33 +4,45 @@ on: [push]
 
 jobs:
   build:
-
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PIPENV_NO_INHERIT: 1
+      PIPENV_IGNORE_VIRTUALENVS: 1
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:11.5
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports: ['5432:5432']
     steps:
-    - uses: actions/checkout@v2
-    - name: Configurado para Python 3.9
-    - uses: actions/setup-python@v2
-      with:
-        python-version: 3.9
-    - name: Atualização pip
-      run: |
-        python -m pip install --upgrade pip
-    - name: Instalação de dependencias (bibliotecas)
-      run: |
-        pip install pipenv codecov
-    - name: Instalação de dependencias (bibliotecas)
-      run: |
-        pipenv sync -d
-    - name: Testes
-      run: |
-        pipenv run pytest
-    - name: Lint com flake8
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{secrets.CODECOV_TOKEN}} 
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9.6
+          architecture: x64
+      - name: Copiando configurações
+        run: |
+          cp contrib/env-sample .env
+      - name: Instalando dependências
+        run: |
+          pip install pipenv
+          pipenv sync --dev
+      - name: Rodar flake8
+        run: |
+          pipenv run flake8 .
+      - name: Rodar Pytest
+        run: |
+          pipenv run pytest --cov=atWebsite
+      - name: Relatório Coverage
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
+        run: |
+          pipenv run codecov
+          
+          
+
