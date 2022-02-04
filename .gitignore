@@ -132,3 +132,5 @@ dmypy.json
 .idea/
 # Vs Code files
 .vscode/
+# Arquivos pessoais
+get_random_key.py
