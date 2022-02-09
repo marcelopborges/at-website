@@ -14,6 +14,7 @@ from pathlib import Path
 from decouple import config, Csv
 import dj_database_url
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,6 +30,8 @@ DEBUG = config('DEBUG', cast=bool)
 # Permissão de acesso
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
+AUTH_USER_MODEL = 'base.User'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'collectfast'
+    'collectfast',
     'django.contrib.staticfiles',
     'atWebsite.base',
 ]
