@@ -30,8 +30,7 @@ DEBUG = config('DEBUG', cast=bool)
 # Permissão de acesso
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
-AUTH_USER_MODEL = 'base.models.User'
-
+AUTH_USER_MODEL = 'base.User'
 
 # Application definition
 
