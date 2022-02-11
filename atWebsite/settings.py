@@ -30,7 +30,7 @@ DEBUG = config('DEBUG', cast=bool)
 # Permissão de acesso
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
-AUTH_USER_MODEL = 'atWebsite.base.User'
+AUTH_USER_MODEL = 'base.User'
 
 # Application definition
 
@@ -147,7 +147,7 @@ if AWS_ACCESS_KEY_ID:
     STATIC_ROOT = f'/{STATIC_S3_PATH}/'
     STATIC_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{STATIC_S3_PATH}/'
     ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
-
+    COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
     # Upload media folder
     DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
     DEFAULT_S3_PATH = 'media'
