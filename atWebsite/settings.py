@@ -30,7 +30,7 @@ DEBUG = config('DEBUG', cast=bool)
 # Permissão de acesso
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
-AUTH_USER_MODEL = 'base.User'
+AUTH_USER_MODEL = 'atWebsite.base.User'
 
 # Application definition
 
@@ -122,7 +122,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'mediafiles'
 
-COLLECTFAST_ENABLED = False
+COLLECTFAST_ENABLED = True
 
 # Configuração AWS
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
