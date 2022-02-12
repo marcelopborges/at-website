@@ -5,4 +5,4 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse('Em breve, o novo site da A.T. Ana Lúcia, aguarde...')
+    return HttpResponse('<html><body>Em breve</body></html>')

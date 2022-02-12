@@ -13,6 +13,8 @@ from functools import partial
 from pathlib import Path
 from decouple import config, Csv
 import dj_database_url
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -75,6 +77,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'atWebsite.wsgi.application'
 
+# Configuração Django Debug toolbar
+INTERNAL_IPS = config('INTERNAL_IPS', cast=Csv(), default='127.0.0.1')
+if DEBUG:
+    INSTALLED_APPS.append('debug_toolbar')
+    MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
+
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 parse_database = partial(dj_database_url.parse, conn_max_age=600)
@@ -122,12 +130,12 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'mediafiles'
 
-COLLECTFAST_ENABLED = True
+COLLECTFAST_ENABLED = False
 
 # Configuração AWS
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
-
-if AWS_ACCESS_KEY_ID:
+# Retirando o '==1' você libera o acesso para receber o collect static da aws
+if AWS_ACCESS_KEY_ID == 1:
     AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400', }
@@ -156,6 +164,11 @@ if AWS_ACCESS_KEY_ID:
 
     INSTALLED_APPS.append('s3_folder_storage')
     INSTALLED_APPS.append('storages')
+
+SENTRY_DSN = config('SENTRY_DSN', default=None)
+
+if SENTRY_DSN:
+    sentry_sdk.init(dsn=SENTRY_DSN, integrations=[DjangoIntegration()])
 
 
 # Default primary key field type
