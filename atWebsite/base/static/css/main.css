@@ -1,6 +1,51 @@
-@import url(bootstrap.min.css);
-@import url(config.css);
-@import url(global.css);
-@import url(custom.css);
-@import url(responsive.css);
+:root {
+    --primeira: #BF7960;
+    --segundo: #BFBFBD;
+    --terceiro: #404040;
+    --quarta: #0D0D0D;
+    --quinta: #F2F2F0;
+}
 
+body, html {
+    font-family: 'Roboto', sans-serif;
+}
+
+#header {
+    width: 100%;
+    background-color: transparent;
+    transition: ease-out 0.2s;
+}
+
+#header .navbar-collapse {
+    width: auto;
+}
+
+#header .nav-item {
+    font-weight: 500;
+    padding-left: 0;
+    padding-right: 0;
+    color: #404040;
+    border-bottom: solid 4px transparent;
+}
+
+#header .nav-item:hover {
+    border-bottom: solid 4px #BF7960;
+
+
+}
+
+/* MIN WIDTH  */
+@media (max-width: 992px) {
+    #header .nav-item{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+
+}
+/* MAX MEDIUM */
+@media (min-width: 992px) {
+    #header .navbar-collapse {
+        width: 100%;
+    }
+}
