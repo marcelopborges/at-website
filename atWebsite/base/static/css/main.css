@@ -16,6 +16,10 @@ body, html {
     transition: ease-out 0.2s;
 }
 
+#header .navbar-brand{
+    width: 100%;
+}
+
 #header .navbar-collapse {
     width: auto;
 }
