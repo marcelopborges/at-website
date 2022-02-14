@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="2.5621in" height=".52024in" inkscape:export-filename="/Users/marceloborges/Projects/at-website/atWebsite/base/static/assets/bitmap.svg" inkscape:export-xdpi="96" inkscape:export-ydpi="96" inkscape:version="1.1.2 (b8e25be8, 2022-02-05)" sodipodi:docname="logo.svg" version="1.1" viewBox="0 0 65.078 13.214" xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
+ <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="0" fit-margin-left="0" fit-margin-right="0" fit-margin-top="0" inkscape:current-layer="layer1" inkscape:cx="46.989484" inkscape:cy="68.420499" inkscape:document-units="mm" inkscape:pagecheckerboard="0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="969" inkscape:window-maximized="0" inkscape:window-width="1463" inkscape:window-x="0" inkscape:window-y="25" inkscape:zoom="3.1496409" lock-margins="false" pagecolor="#ffffff" showborder="false" showgrid="false" units="in"/>
+ <g transform="translate(-.47476 -4.146)" inkscape:groupmode="layer" inkscape:label="Camada 1">
+  <g transform="matrix(1.7499 0 0 1.7499 -243.88 -275.91)">
+   <text transform="matrix(1.072 0 0 .93281 72.909 124.9)" x="70.363457" y="43.456169" fill="#000000" font-family="Oswald" font-size="4.662px" stroke-width=".11655" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variation-settings:'wght' 300;line-height:1.25" inkscape:transform-center-x="11.1672" inkscape:transform-center-y="-0.71280001" xml:space="preserve"><tspan x="70.363457" y="43.456169" font-family="Oswald" font-size="4.662px" stroke-width=".11655" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variation-settings:'wght' 300" sodipodi:role="line">Ana Lúcia Franco</tspan></text>
+   <g transform="matrix(.28536 0 0 .28536 116.83 152.94)">
+    <ellipse cx="92.942" cy="38.096" rx="13.021" ry="13.231" fill="#404040" stroke-width=".30293"/>
+    <g transform="translate(9.2395 -1.9601)" fill="#f2f2f2">
+     <g fill="#f2f2f2">
+      <g fill="#f2f2f2">
+       <g stroke-width=".26458">
+        <rect x="76.486" y="32.286" width="3.3602" height="15.541" ry="1.6801"/>
+        <rect x="80.171" y="32.286" width="3.3602" height="15.541" ry="1.6801"/>
+        <rect x="83.856" y="32.286" width="3.3602" height="15.541" ry="1.6801"/>
+        <rect x="76.486" y="32.286" width="3.3602" height="15.541" ry="1.6801"/>
+        <rect x="80.171" y="32.286" width="3.3602" height="15.541" ry="1.6801"/>
+        <rect x="83.856" y="32.286" width="3.3602" height="15.541" ry="1.6801"/>
+       </g>
+       <rect x="87.56" y="42.103" width="3.3602" height="5.7234" ry="1.6801" stroke-width=".16057"/>
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

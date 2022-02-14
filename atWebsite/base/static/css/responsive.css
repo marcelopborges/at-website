@@ -1,0 +1,15 @@
+/* MIN WIDTH  */
+@media (max-width: 992px) {
+    #header .nav-item{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+
+}
+/* MAX MEDIUM */
+@media (min-width: 992px) {
+    #header .navbar-collapse {
+        width: 100%;
+    }
+}

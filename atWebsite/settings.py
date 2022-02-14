@@ -135,7 +135,7 @@ COLLECTFAST_ENABLED = False
 # Configuração AWS
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 # Retirando o '==1' você libera o acesso para receber o collect static da aws
-if AWS_ACCESS_KEY_ID == 1:
+if AWS_ACCESS_KEY_ID:
     AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400', }
@@ -151,7 +151,7 @@ if AWS_ACCESS_KEY_ID == 1:
     COLLECTFAST_ENABLED = True
     # Static Assets
     STATICFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
-    STATIC_S3_PATH = 'static'
+    STATIC_S3_PATH = 'base/static'
     STATIC_ROOT = f'/{STATIC_S3_PATH}/'
     STATIC_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{STATIC_S3_PATH}/'
     ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
