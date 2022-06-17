@@ -248,10 +248,10 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:716f9d20b4c3513d1720245eb1dac009b40c9694c88e940e54b67b8b65d09493",
-                "sha256:d181db00651bce5268b8f559795053d5e8f645e4dbafac6d262b22d7e72e19eb"
+                "sha256:2a5de5d1ed1fd6dfbe4f1a1079af816032e2d8dfc0975265b57a61429511d10c",
+                "sha256:a4c782ac58fcc9e3a86e5e1a4c74cf9d24bf21e4f1562043309022e1bb76951c"
             ],
-            "version": "==60.9.0"
+            "version": "==62.5.0"
         },
         "six": {
             "hashes": [
